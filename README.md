@@ -21,3 +21,4 @@ serde
 ## sources
 https://developer.chrome.com/extensions
 https://developer.chrome.com/extensions/webRequest
+https://developer.chrome.com/extensions/samples
