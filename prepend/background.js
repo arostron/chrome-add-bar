@@ -6,7 +6,7 @@ console.log("installed")
 
 chrome.webRequest.onBeforeRequest.addListener(
   function(info) {
-	term = "wizard%20"
+	term = "rust%20"
     //console.log("Request intercepted: " + info.url);
 	// inject prepend statement into url, then redirect to it
 	if (0 < info.url.indexOf("www.google.com/")
