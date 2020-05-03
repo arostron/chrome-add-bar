@@ -12,6 +12,13 @@ mongodb docs
 serde
 
 
+## progress so far
+
+I thought the simplest way to do this would be to inject a term into a google search query, then just simply redirect to the new request.
+I found out that Google searches contain numerous requests so it isnt that simple...
+
+I might try something with the omnibox in the future?
+
 ## installing a chrome extension
 - in google chrome go to:
 	- chrome://extensions/
