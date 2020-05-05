@@ -7,9 +7,13 @@ console.log("installed")
 chrome.webRequest.onBeforeRequest.addListener(
   function(info) {
 	term = "rust%20"
+	console.log("called...")
     //console.log("Request intercepted: " + info.url);
 	// inject prepend statement into url, then redirect to it
 	if (0 < info.url.indexOf("www.google.com/search") )	{
+
+		// dont recurse
+		if (-1 == info.url.indexOf(term)) {
 
 		// hacky way to get the term into the search query
 		var splitup = info.url.split("search?q=")
@@ -17,7 +21,10 @@ chrome.webRequest.onBeforeRequest.addListener(
 		var end = splitup[1]
 		info.url = start + "search?q=" + term + end
 		console.log("Modified URL: " + info.url)
-	chrome.tabs.create({ url: info.url });
+		chrome.tabs.update({ url: info.url });
+
+
+		}
 	}
     return {redirectUrl: info.url };
   },
