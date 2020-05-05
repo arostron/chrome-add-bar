@@ -1,6 +1,6 @@
 {
   "name": "SearchPrepend",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Prepend some search term to all google searches",
   "permissions": [
 	"tabs",
