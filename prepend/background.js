@@ -7,10 +7,11 @@ console.log("installed")
 chrome.webRequest.onBeforeRequest.addListener(
   function(info) {
 	term = "rust%20"
-	console.log("called...")
     //console.log("Request intercepted: " + info.url);
 	// inject prepend statement into url, then redirect to it
-	if (0 < info.url.indexOf("www.google.com/search") )	{
+	if (0 < info.url.indexOf("www.google.com/search") ||
+		0 < info.url.indexOf("www.google.com/complete/search")
+	) {
 
 		// dont recurse
 		if (-1 == info.url.indexOf(term)) {
@@ -26,7 +27,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 		}
 	}
-    return {redirectUrl: info.url };
+    //return {redirectUrl: info.url };
   },
   // filters ... #nofilter
   {
