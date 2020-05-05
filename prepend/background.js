@@ -9,9 +9,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 	term = "rust%20"
     //console.log("Request intercepted: " + info.url);
 	// inject prepend statement into url, then redirect to it
-	if (0 < info.url.indexOf("www.google.com/")
-		&& 0 < info.url.indexOf("search") )
-	{
+	if (0 < info.url.indexOf("www.google.com/search") )	{
 
 		// hacky way to get the term into the search query
 		var splitup = info.url.split("search?q=")
