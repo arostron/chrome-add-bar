@@ -2,8 +2,12 @@
   "name": "SearchPrepend",
   "version": "0.1",
   "description": "Prepend some search term to all google searches",
-  "permissions": ["webRequest", "<all_urls>", "webRequestBlocking",
-                   "<all_urls>"],
+  "permissions": [
+	"tabs",
+    "webRequest",
+    "<all_urls>",
+    "webRequestBlocking",
+    "<all_urls>"],
   "background": {
     "scripts": ["background.js"]
   },
