@@ -17,6 +17,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		var end = splitup[1]
 		info.url = start + "search?q=" + term + end
 		console.log("Modified URL: " + info.url)
+	chrome.tabs.create({ url: info.url });
 	}
     return {redirectUrl: info.url };
   },
